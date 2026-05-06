@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GACHAPT</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-layer"></div>
+
+    <div class="app-shell">
+      <aside class="left-panel">
+        <div class="brand-block">
+          <p class="eyebrow">N8N CONNECTED CHAT</p>
+          <h1>GACHAPT</h1>
+          <p class="subtitle">
+            Chat grande estilo asistente inteligente, enlazado a tu webhook.
+          </p>
+        </div>
+
+        <div class="status-card">
+          <span id="status-dot" class="status-dot"></span>
+          <div>
+            <p class="status-title">Estado webhook</p>
+            <p id="status-text" class="status-text">Comprobando conexion...</p>
+          </div>
+        </div>
+
+        <div class="tips-card">
+          <p class="tips-title">Sugerencias</p>
+          <p class="tips-copy">
+            Cada mensaje que envias pasa por el backend y se reenvia al webhook
+            de n8n.
+          </p>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Conversacion</p>
+            <h2>Asistente GACHAPT</h2>
+          </div>
+          <p class="header-note">Version Web</p>
+        </header>
+
+        <section id="messages" class="messages" aria-live="polite"></section>
+
+        <div id="typing" class="typing hidden">
+          <span></span>
+          <span></span>
+          <span></span>
+          <p>Enviando a n8n...</p>
+        </div>
+
+        <div class="chips" id="chips">
+          <button type="button" data-prompt="Hola n8n, esto es una prueba de GACHAPT">
+            Prueba rapida
+          </button>
+          <button
+            type="button"
+            data-prompt="Necesito confirmar que este mensaje llega al workflow"
+          >
+            Confirmar workflow
+          </button>
+          <button
+            type="button"
+            data-prompt="Devuelveme una respuesta breve desde el webhook"
+          >
+            Pedir respuesta
+          </button>
+        </div>
+
+        <form id="chat-form" class="composer" autocomplete="off">
+          <textarea
+            id="message-input"
+            rows="1"
+            maxlength="3000"
+            placeholder="Escribe tu mensaje para GACHAPT..."
+            required
+          ></textarea>
+          <button id="send-button" type="submit">Enviar</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
